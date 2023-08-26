@@ -16,14 +16,12 @@ FREETYPEINC = /usr/include/freetype2
 
 # includes and libs
 INCS = -I${X11INC} -I${FREETYPEINC}
-LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}
+LIBS = -L${X11LIB} -lX11 ${FREETYPELIBS}
 
-# flags
-CPPFLAGS = -D_DEFAULT_SOURCE -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
-#CFLAGS   = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
-# changed -Os to -O3
-CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Wno-stringop-truncation -O3 ${INCS} ${CPPFLAGS}
-LDFLAGS  = ${LIBS}
+# flags:
+CPPFLAGS = -D_DEFAULT_SOURCE -DVERSION=\"${VERSION}\"
+CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Wno-stringop-truncation -O3 -flto ${INCS} ${CPPFLAGS}
+LDFLAGS  = -flto ${LIBS}
 
 # compiler and linker
 CC = cc

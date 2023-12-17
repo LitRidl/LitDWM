@@ -7,11 +7,9 @@ static const char norm_border[] = "#4C566A";
 
 static const char sel_fg[] = "#e2c792";
 static const char sel_bg[] = "#2c485f";
-static const char sel_border[] = "#bb70d2";
+static const char sel_border[] = "#79428a"; // Brighter: "#bb70d2"
 
 #endif
-
-// #1a2a37#2c4b5f
 
 /* Reference colors:
   	warmer = {

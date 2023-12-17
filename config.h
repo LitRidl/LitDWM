@@ -27,8 +27,8 @@ static const Rule rules[] = {
 	/* class             instance    title       tags mask     isfloating   monitor */
 	{ "zoom",            NULL,       NULL,       0,            1,           -1 },
 	{ "Pavucontrol",     NULL,       NULL,       0,            1,           -1 },
-	{ "TelegramDesktop", NULL,       NULL,       1 << 3,       1,           -1 },
-	{ "obsidian",        NULL,       NULL,       1 << 4,       1,           -1 },
+	{ "TelegramDesktop", NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "obsidian",        NULL,       NULL,       1 << 4,       0,           -1 },
 };
 
 /* layout(s) */

@@ -1,0 +1,25 @@
+From 2cc025087949ddacd7c5076b72233f36d58014d2 Mon Sep 17 00:00:00 2001
+From: Michael Ridley <litridl@gmail.com>
+Date: Sun, 17 Dec 2023 09:49:21 +0600
+Subject: [PATCH] Adjust pixel rendering to fix transparent window borders
+
+---
+ drw.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drw.c b/drw.c
+index a58a2b4..163eb51 100644
+--- a/drw.c
++++ b/drw.c
+@@ -190,6 +190,8 @@ drw_clr_create(Drw *drw, Clr *dest, const char *clrname)
+ 	                       DefaultColormap(drw->dpy, drw->screen),
+ 	                       clrname, dest))
+ 		die("error, cannot allocate color '%s'", clrname);
++
++	dest->pixel |= 0xff << 24;
+ }
+ 
+ /* Wrapper to create color schemes. The caller has to call free(3) on the
+-- 
+2.43.0
+

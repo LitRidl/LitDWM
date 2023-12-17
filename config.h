@@ -7,7 +7,8 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
+/* LitDWM uses Pango patch for fonts, but dmenu can only use fontconfig for now, and so font description is different */
+static const char font[]            = "monospace 10";
 static const char dmenufont[]       = "monospace:size=10";
 static const char *colors[][3]      = {
     /*                 fg         bg          border                 */
@@ -23,9 +24,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",       NULL,       NULL,       0,            1,           -1 },
-	{ "zoom",       NULL,       NULL,       0,            1,           -1 },
+	/* class             instance    title       tags mask     isfloating   monitor */
+	{ "zoom",            NULL,       NULL,       0,            1,           -1 },
+	{ "Pavucontrol",     NULL,       NULL,       0,            1,           -1 },
+	{ "TelegramDesktop", NULL,       NULL,       1 << 3,       1,           -1 },
+	{ "obsidian",        NULL,       NULL,       1 << 4,       1,           -1 },
 };
 
 /* layout(s) */
